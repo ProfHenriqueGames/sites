@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras</title>
+    <link rel="stylesheet" href="Index.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">Lista de Compras</h1>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <form id="shopping-form" class="shopping-form">
+                <input type="text" name="item" id="item" placeholder="Adicionar item à lista" class="shopping-form__input">
+                <button type="submit" class="shopping-form__button">Adicionar</button>
+            </form>
+
+            <ul id="shopping-list" class="shopping-list">
+                <!-- Itens da lista de compras serão adicionados aqui -->
+            </ul>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">© 2024 Lista de Compras. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

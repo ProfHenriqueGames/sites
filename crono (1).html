@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronômetro e Imagem</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #contador {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #botao {
+            background-color: #ff3333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        #botao:hover {
+            background-color: #990000;
+        }
+        #imagem {
+            display: none;
+            max-width: 300px;
+            max-height: 300px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cronômetro</h1>
+    <div id="contador">Tempo restante: <span id="tempo">10</span> segundos</div>
+    <button id="botao" onclick="iniciarCronometro()">Iniciar Cronômetro</button>
+    <img id="imagem" src="caveira.jpeg" alt="Imagem" />
+
+    <script>
+        function iniciarCronometro() {
+            var tempoRestante = 10;
+            var contador = document.getElementById("tempo");
+            var botao = document.getElementById("botao");
+            var imagem = document.getElementById("imagem");
+
+            botao.disabled = true; // Desabilita o botão durante o cronômetro
+
+            var intervalo = setInterval(function() {
+                tempoRestante--;
+                contador.textContent = tempoRestante;
+
+                if (tempoRestante <= 0) {
+                    clearInterval(intervalo);
+                    contador.textContent = "0";
+                    imagem.style.display = "block";
+                    botao.disabled = false; // Habilita o botão quando o cronômetro termina
+                }
+            }, 1000); // atualiza a cada segundo
+        }
+    </script>
+</body>
+</html>

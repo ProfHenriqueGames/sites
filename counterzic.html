@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contador Super Zica</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    #contador {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+    #botao {
+        background-color: #3498db;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    #botao:hover {
+        background-color: #2980b9;
+    }
+    #contador {
+        font-size: 36px;
+        font-weight: bold;
+        color: #2ecc71;
+    }
+    @keyframes contadorAnimado {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    .contador-animado {
+        animation: contadorAnimado 0.5s infinite;
+    }
+</style>
+</head>
+<body>
+
+<div id="contador" class="contador-animado">0</div>
+<button id="botao">Clique para Contar</button>
+
+<script>
+    var contador = 0;
+    var contadorElement = document.getElementById('contador');
+    var botao = document.getElementById('botao');
+
+    botao.addEventListener('click', function() {
+        contador++;
+        contadorElement.textContent = contador;
+        contadorElement.classList.remove('contador-animado'); // Remove a classe de animação
+        void contadorElement.offsetWidth; // Trigger reflow para reiniciar a animação
+        contadorElement.classList.add('contador-animado'); // Adiciona a classe de animação
+    });
+</script>
+
+</body>
+</html>

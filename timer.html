@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relógio Digital</title>
+<style>
+  #clock {
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 50px;
+  }
+</style>
+</head>
+<body>
+
+<div id="clock"></div>
+
+<script>
+function updateTime() {
+  var now = new Date();
+  var hours = now.getHours();
+  var minutes = now.getMinutes();
+  var seconds = now.getSeconds();
+
+  // Adiciona um zero à esquerda se o número for menor que 10
+  hours = hours < 10 ? '0' + hours : hours;
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+  seconds = seconds < 10 ? '0' + seconds : seconds;
+
+  var timeString = hours + ':' + minutes + ':' + seconds;
+
+  // Atualiza o conteúdo do elemento HTML com o tempo atual
+  document.getElementById('clock').textContent = timeString;
+}
+
+// Chama a função updateTime a cada segundo para atualizar o relógio
+setInterval(updateTime, 1000);
+</script>
+
+</body>
+</html>

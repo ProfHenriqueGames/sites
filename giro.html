@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Botão de Girar</title>
+    <style>
+        #rotateButton {
+            width: 150px;
+            height: 150px;
+            background-color: #ec0c62;
+            color: white;
+            font-size: 25px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <button id="rotateButton" onclick="rotate()">Girar</button>
+
+    <script>
+        var rotation = 0;
+        var button = document.getElementById('rotateButton');
+
+        function rotate() {
+            rotation += 45;
+            button.style.transform = 'rotate(' + rotation + 'deg)';
+        }
+    </script>
+</body>
+</html>

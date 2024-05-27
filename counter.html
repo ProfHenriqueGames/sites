@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jogo de 2 Jogadores</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    #contador {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    #botao {
+        background-color: red;
+        padding: 10px 20px;
+        color: rgb(1, 1, 1);
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+    #botao:hover {
+        transform: scale(1.1);
+    }
+    #botao:active {
+        transform: rotate(360deg);
+    }
+</style>
+</head>
+<body>
+
+<div id="contador">0</div>
+<button id="botao">Clique para Jogar</button>
+
+<script>
+    // Variáveis
+    var contador = 0;
+    var botao = document.getElementById('botao');
+    var contadorDisplay = document.getElementById('contador');
+
+    // Função para atualizar o contador
+    function atualizarContador() {
+        contador++;
+        contadorDisplay.textContent = contador;
+    }
+
+    // Função para reiniciar o jogo
+    function reiniciarJogo() {
+        contador = 0;
+        contadorDisplay.textContent = contador;
+    }
+
+    // Adicionar evento de clique ao botão
+    botao.addEventListener('click', function() {
+        atualizarContador();
+
+        // Verificar se o contador atingiu 2000000
+        if (contador >= 10) {
+            alert("O Jogador 1 ganhou!");
+            reiniciarJogo();
+        }
+    });
+</script>
+
+</body>
+</html>

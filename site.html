@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Loja de Roupas</title>
+</head>
+<body>
+
+    <header>
+        <h1>Loja de Roupas</h1>
+        <nav>
+            <ul>
+                <li><a href="#camisetas">Camisetas</a></li>
+                <li><a href="#calcas">Calças</a></li>
+                <li><a href="#vestidos">Vestidos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="camisetas" class="categoria">
+            <h2>Camisetas</h2>
+            <div class="produto">
+                <img src="camiseta1.jpg" alt="Camiseta 1">
+                <p>Camiseta Estampada</p>
+                <span>R$29.99</span>
+            </div>
+            <div class="produto">
+                <img src="camiseta2.jpg" alt="Camiseta 2">
+                <p>Camiseta Básica</p>
+                <span>R$19.99</span>
+            </div>
+        </section>
+
+        <section id="calcas" class="categoria">
+            <h2>Calças</h2>
+            <div class="produto">
+                <img src="calca1.jpg" alt="Calça 1">
+                <p>Calça Jeans Skinny</p>
+                <span>R$49.99</span>
+            </div>
+            <div class="produto">
+                <img src="calca2.jpg" alt="Calça 2">
+                <p>Calça de Moletom</p>
+                <span>R$39.99</span>
+            </div>
+        </section>
+
+        <section id="vestidos" class="categoria">
+            <h2>Vestidos</h2>
+            <div class="produto">
+                <img src="vestido1.jpg" alt="Vestido 1">
+                <p>Vestido Floral</p>
+                <span>R$59.99</span>
+            </div>
+            <div class="produto">
+                <img src="vestido2.jpg" alt="Vestido 2">
+                <p>Vestido de Festa</p>
+                <span>R$79.99</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Loja de Roupas. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Loja de Roupas</title>
+</head>
+<body>
+
+    <header>
+        <h1>Loja de Roupas</h1>
+        <nav>
+            <ul>
+                <li><a href="#camisetas">Camisetas</a></li>
+                <li><a href="#calcas">Calças</a></li>
+                <li><a href="#calcados">Calçados</a></li>
+                <li><a href="#vestidos">Vestidos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="camisetas" class="categoria">
+            <h2>Camisetas</h2>
+            <div class="produto">
+                <img src="camiseta1.jpg" alt="Camiseta 1">
+                <p>Camiseta Estampada</p>
+                <span>R$29.99</span>
+            </div>
+            <div class="produto">
+                <img src="camiseta2.jpg" alt="Camiseta 2">
+                <p>Camiseta Básica</p>
+                <span>R$19.99</span>
+            </div>
+        </section>
+
+        <section id="calcas" class="categoria">
+            <h2>Calças</h2>
+            <div class="produto">
+                <img src="calca1.jpg" alt="Calça 1">
+                <p>Calça Jeans Skinny</p>
+                <span>R$49.99</span>
+            </div>
+            <div class="produto">
+                <img src="calca2.jpg" alt="Calça 2">
+                <p>Calça de Moletom</p>
+                <span>R$39.99</span>
+            </div>
+        </section>
+
+        <section id="calcados" class="categoria">
+            <h2>Calçados</h2>
+            <div class="produto">
+                <img src="tenis1.jpg" alt="Tênis 1">
+                <p>Tênis Esportivo</p>
+                <span>R$79.99</span>
+            </div>
+            <div class="produto">
+                <img src="sandalia1.jpg" alt="Sandália 1">
+                <p>Sandália Casual</p>
+                <span>R$59.99</span>
+            </div>
+        </section>
+
+        <section id="vestidos" class="categoria">
+            <h2>Vestidos</h2>
+            <div class="produto">
+                <img src="vestido1.jpg" alt="Vestido 1">
+                <p>Vestido Floral</p>
+                <span>R$59.99</span>
+            </div>
+            <div class="produto">
+                <img src="vestido2.jpg" alt="Vestido 2">
+                <p>Vestido de Festa</p>
+                <span>R$79.99</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Loja de Roupas. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+/* O restante do CSS permanece inalterado. */
+
+/* Adicionando estilo específico para a nova seção "calcados" */
+#calcados .produto img {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Ajustando o estilo do rodapé para incluir a nova seção "calcados" */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Botão On/Off</title>
+</head>
+<body>
+    <button id="toggleButton" onclick="toggle()">Off</button>
+
+    <script>
+        var isOn = false;
+        var button = document.getElementById('toggleButton');
+
+        function toggle() {
+            if (isOn) {
+                isOn = false;
+                button.innerHTML = 'Off';
+                // Adicione aqui a lógica para quando o botão estiver desligado
+            } else {
+                isOn = true;
+                button.innerHTML = 'On';
+                // Adicione aqui a lógica para quando o botão estiver ligado
+            }
+        }
+    </script>
+</body>
+</html>

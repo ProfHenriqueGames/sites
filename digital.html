@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Botão HTML com Relógio e Data</title>
+<style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 20px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.clock {
+  font-size: 20px;
+}
+
+.date {
+  font-size: 20px;
+  margin-top: 10px;
+  display: none;
+}
+</style>
+</head>
+<body>
+
+<button class="button" onclick="toggleDate()">Clique Aqui</button>
+<div class="clock" id="clock"></div>
+<div class="date" id="date"></div>
+
+<script>
+let clickCount = 0;
+
+function toggleDate() {
+  clickCount++;
+  const dateElement = document.getElementById('date');
+  if (clickCount % 2 === 1) {
+    const now = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateString = now.toLocaleDateString('pt-BR', options);
+    dateElement.textContent = dateString;
+    dateElement.style.display = 'block';
+  } else {
+    dateElement.style.display = 'none';
+  }
+}
+
+function updateTime() {
+  const now = new Date();
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const seconds = String(now.getSeconds()).padStart(2, '0');
+  const timeString = ${hours}:${minutes}:${seconds};
+  document.getElementById('clock').textContent = timeString;
+}
+
+// Atualizar o relógio a cada segundo
+setInterval(updateTime, 1000);
+</script>
+
+</body>
+</html>

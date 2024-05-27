@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemplo de Formulário de Importação de XML</title>
+</head>
+<body>
+    <!-- Conteúdo do documento HTML -->
+    <input type="file" id="xmlFile" accept=".xml">
+    <button onclick="importarXML()">Importar XML</button>
+    <div id="resultado"></div>
+    
+    <!-- Script JavaScript para importar o XML -->
+    <script>
+        // Função para importar o XML
+        function importarXML() {
+            var file = document.getElementById("xmlFile").files[0];
+            var reader = new FileReader();
+            reader.onload = function(event) {
+                var xmlDoc = new DOMParser().parseFromString(event.target.result, "text/xml");
+                var resultado = "";
+                var items = xmlDoc.getElementsByTagName("item");
+                for (var i = 0; i < items.length; i++) {
+                    resultado += "Item " + (i+1) + ": " + items[i].textContent + "<br>";
+                }
+                document.getElementById("resultado").innerHTML = resultado;
+            };
+            reader.readAsText(file);
+        }
+    </script>
+</body>
+</html>

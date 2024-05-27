@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Importar XML com Caracteres ISO Especiais</title>
+</head>
+<body>
+    <h1>Importar XML com Caracteres ISO Especiais</h1>
+    
+    <button id="importButton">Importar XML</button>
+
+    <div id="xmlContent"></div>
+
+    <script>
+        document.getElementById('importButton').addEventListener('click', function() {
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = '.xml';
+            
+            fileInput.addEventListener('change', function() {
+                const file = fileInput.files[0];
+                
+                if (file) {
+                    const reader = new FileReader();
+                    
+                    reader.onload = function(e) {
+                        const xmlString = e.target.result;
+                        const parser = new DOMParser();
+                        const xmlDoc = parser.parseFromString(xmlString, 'text/xml');
+                        
+                        const textContent = xmlDoc.documentElement.textContent;
+                        document.getElementById('xmlContent').innerText = textContent;
+                    };
+                    
+                    reader.readAsText(file, 'ISO-8859-1');
+                } else {
+                    alert('Por favor, selecione um arquivo XML.');
+                }
+            });
+            
+            fileInput.click();
+        });
+    </script>
+</body>
+</html>
